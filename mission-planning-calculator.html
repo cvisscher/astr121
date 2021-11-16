@@ -12,8 +12,8 @@
 	
 	<label for="target">Select the location of the target:</label>
 	<select id="target" name="target">
-		<option value="inside">Inside Earth's Orbit</option>
 		<option value="outside">Outside Earth's Orbit</option>
+		<option value="inside">Inside Earth's Orbit</option>
 		<option value="moon">Moon</option>
 	</select><br>
 
@@ -51,22 +51,24 @@
 			<td></td>
 			<td><input type="button" value="Submit" name="submit" onClick="display()"/></td>
 		</tr>
-	</table><br>
-	
-	<table>
+		<tr><td><br></td></tr>
 		<tr>
 			<td>Maximum Payload (kg)</td>
-			<td><div id="maxpayload"></div></td>
+			<td><div id="maxpayload" style="text-align:right"></div></td>
 		</tr>
 		<tr>
 			<td>Fuel per kg of Payload (kg)</td>
-			<td><div id="fuel"></div></td>
+			<td><div id="fuel" style="text-align:right"></div></td>
+		</tr>
+		<tr>
+			<td>Cost to Launch (per kg of Payload)</td>
+			<td><div id="cost" style="text-align:right"></div></td>
 		</tr>
 	</table>
 	
 	<br>
 	<br>
-	<p>Last updated 11 Nov 2021</p>
+	<p>Last updated 15 Nov 2021</p>
 	<p>For questions relating to this page, <a href="mailto: ljhgssn@dordt.edu">email Elijah Goossen.</a></p>
 
 	<script>
@@ -80,6 +82,7 @@
 			var B = document.getElementById("rocketB").value;
 			
 			var maxPL = A*Math.abs(a-1)**B;
+			maxPL = Math.round(maxPL);
 			
 			var ff;
 			if (targetlocation == "inside") {
@@ -100,9 +103,15 @@
 			} else {
 				f = ff + fo + fl;
 			}
+			f = Math.round(f);
+			
+			var cost = f*2800;
+			cost = Math.round(cost);
+			cost = cost/1000000;
 
 			document.getElementById("maxpayload").innerHTML = maxPL;
 			document.getElementById("fuel").innerHTML = f;
+			document.getElementById("cost").innerHTML = "$ " + cost +  " M";
 		}
 	</script>
 </body>
