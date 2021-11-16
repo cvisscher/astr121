@@ -21,7 +21,8 @@
 	<select id="mission" name="mission">
 		<option value="flyby">Flyby</option>
 		<option value="orbiter">Orbiter</option>
-		<option value="lander">Lander (includes rovers and impactors)</option>
+		<option value="lander">Lander (includes rovers)</option>
+		<option value="return">Sample Return</option>
 	</select><br><br>
 	
 	<table>
@@ -102,8 +103,10 @@
 				f = ff;
 			} else if (missiontype == "orbiter") {
 				f = ff + fo;
-			} else {
+			} else if (missiontype == "lander") {
 				f = ff + fo + fl;
+			} else {
+				f = ff + fo + 2*fl;
 			}
 			f = Math.round(f);
 			
