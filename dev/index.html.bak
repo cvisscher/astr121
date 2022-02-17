@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>ASTR 121 Mission Planning</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Elijah Goossen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/menu.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>ASTR 121 Mission Planning</h1>
+</div>
+
+<menu-component></menu-component>
+
+<div class="footer">
+  <address>
+  Elijah Goossen<br>
+  <a href="mailto:ljhgssn@dordt.edu">ljhgssn@dordt.edu</a><br>
+  Last updated: 28-Nov-2021
+  </address>
+</div>
+</body>
+
+</html>
