@@ -6,7 +6,7 @@
   <meta name="author" content="Elijah Goossen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="astr121.css">
-  <script src="../components/menu.js" type="text/javascript" defer></script>
+  <script src="components/components.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
   <p><i>This mission calculator gives basic launch costs for various missions</i></p>
 </div>
 
-<menu-component></menu-component>
+<nav-menu></nav-menu>
 
 <div class="row">
   <div class="leftcolumn">  
@@ -39,13 +39,14 @@
   </div>
 </div>
   
-<div class="footer">
-  <address>
-  Elijah Goossen<br>
-  <a href="mailto:ljhgssn<@dordt.edu">ljhgssn@dordt.edu</a><br>
-  </address>
-  Last updated: 15-Feb-2022
-</div>
+<my-footer rev-date="15 Feb 2022"></my-footer>
+<!-- <div class="footer"> -->
+  <!-- <address> -->
+  <!-- Elijah Goossen<br> -->
+  <!-- <a href="mailto:ljhgssn<@dordt.edu">ljhgssn@dordt.edu</a><br> -->
+  <!-- </address> -->
+  <!-- Last updated: 15-Feb-2022 -->
+<!-- </div> -->
 
 </body>
 

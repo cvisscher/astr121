@@ -1,4 +1,4 @@
-class Header extends HTMLElement {
+class NavMenu extends HTMLElement {
 	constructor() {
 		super();
 	}
@@ -20,6 +20,7 @@ class Header extends HTMLElement {
 							</div>
 						</li>
 						<li><a href="https://satellitebuilder.org.uk/index.html">Satellite Builder</a></li>
+						<li><a href="http://chrisnorth.github.io/design-a-space-telescope/#intro">Space Telescope Designer</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -27,4 +28,26 @@ class Header extends HTMLElement {
 	}
 }
 
-customElements.define('menu-component', Header);
+customElements.define('nav-menu', NavMenu);
+
+class Footer extends HTMLElement {
+  constructor () {
+    super();
+  }
+  
+  static get observedAttributes () { return ["rev-date"]; }
+  attributeChangedCallback (name, oldVal, newVal) {
+    if (name=="rev-date") { this.innerHTML = `
+		<div class="footer">
+			<address>
+				Elijah Goossen<br>
+				<a href="mailto:ljhgssn@dordt.edu">ljhgssn@dordt.edu</a><br>
+				Last updated:` + newVal + `
+			</address>
+			Developed under the  <a href="http://www.ipalgroup.org/oer" target="_blank">Iowa Private Academic Libraries Open Education Research Grant</a>
+		</div>
+	`;}
+  }
+}
+
+customElements.define("my-footer", Footer);

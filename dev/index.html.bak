@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="astr121.css">
   <script src="components/menu.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -15,15 +16,9 @@
   <h1>ASTR 121 Mission Planning</h1>
 </div>
 
-<menu-component></menu-component>
+<nav-menu></nav-menu>
+<my-footer rev-date="29 April 2022"></my-footer>
 
-<div class="footer">
-  <address>
-  Elijah Goossen<br>
-  <a href="mailto:ljhgssn@dordt.edu">ljhgssn@dordt.edu</a><br>
-  Last updated: 28-Nov-2021
-  </address>
-</div>
 </body>
 
 </html>
