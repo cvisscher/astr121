@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="author" content="Elijah Goossen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../astr121.css">
-  <script src="../components/menu.js" type="text/javascript" defer></script>
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/menu.js" type="text/javascript" defer></script>
 </head>
 
 <body>

@@ -6,7 +6,7 @@
   <meta name="author" content="Elijah Goossen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="astr121.css">
-  <script scr="components/menu.js" type="text/javascript" defer></script>
+  <script src="components/components.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
   <h1>List of Launcher Families</h1>
 </div>
 
-<menu-component></menu-component>
+<nav-menu></nav-menu>
 
 <table>
   <tr>
