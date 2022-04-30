@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>ASTR 121 Mission Planning Calculator</title>
+  <title>ASTR 121 Mission Planning</title>
   <meta charset="utf-8">
   <meta name="author" content="Elijah Goossen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,8 @@
 </div>
 
 <nav-menu></nav-menu>
+
+<p>This page has been replaced. See <a href="propulsion.html">Propulsion</a></p>
 
 <div class="row">
   <div class="leftcolumn">  
@@ -41,9 +43,13 @@
         <th colspan="2">Target Information</th>
       </tr>
       <tr>
-        <td>Semi-Major Axis of Target (AU)</td>
+        <td>Semi-Major Axis of Target around parent body (AU)</td>
         <td><input type="number" name="sma" id="sma"></td>
       </tr>
+	  <tr>
+		<td>Semi-Major Axis of Parent Body around Sun (AU)</td>
+		<td><input type="number" name="sma2" id="sma2"></td>
+	  </tr>
       <tr>
         <td>Mass of Target (M<sub>E</sub>)</td>
         <td><input type="number" name="mass" id="mass"></td>
@@ -68,10 +74,10 @@
         <td><input type="button" value="Submit" name="submit" onClick="display()"/></td>
       </tr>
       <tr><td><br></td></tr>
-      <tr>
-        <td>Maximum Payload (kg)</td>
-        <td><div id="maxpayload" style="text-align:right"></div></td>
-      </tr>
+      <!-- <tr> -->
+        <!-- <td>Maximum Payload (kg)</td> -->
+        <!-- <td><div id="maxpayload" style="text-align:right"></div></td> -->
+      <!-- </tr> -->
       <tr>
         <td>Fuel per kg of Payload (kg)</td>
         <td><div id="fuel" style="text-align:right"></div></td>
@@ -84,7 +90,7 @@
   </div>
 </div>
 
-<my-footer rev-date="28 Nov 2021"></my-footer>
+<my-footer rev-date="29 Apr 2022"></my-footer>
 
   <script>
     function display()
@@ -92,33 +98,40 @@
       var targetlocation = document.getElementById("target").value;
       var missiontype = document.getElementById("mission").value;
       var a = document.getElementById("sma").value;
+	  var a2 = document.getElementById("sma2").value;
       var m = document.getElementById("mass").value;
     //  var A = document.getElementById("rocketA").value;
     //  var B = document.getElementById("rocketB").value;
       
     //  var maxPL = A*Math.abs(a-1)**B;
     //  maxPL = Math.round(maxPL);
-      
+       
+	  
       var ff;
       if (targetlocation == "inside") {
-        ff = 11*Math.exp(1.6*(1-a))+9.6;
-      } else if (targetlocation == "moon") {
-        ff = 11*Math.exp(1.6*0.00256)+9.6;
+        ff = 511.59*Math.exp(-8.586*a);
+	  } else if (targetlocation == "outside") {
+		ff = 3.5499*Math.log(a) + 0.6861;
+	  } else if (targetlocation == "planetarymoon") {
+		ffp = 3.5499*Math.log(a2) + 0.6861;
+		ffm = 1.2542*Math.exp(-36.27*a);
+		ff = (ffp + 1)*(ffm + 1) - 1;
       } else {
-        ff = 22*(a-1)**0.38+9.6;
+        ff = 1.72817;
       }
-      var fo = 18*m;
-      var fl = 284*m;
+	  
+      var fo = 0.8203*m;
+      var fl = 117.61*m;
       
       var f;
       if (missiontype == "flyby") {
         f = ff;
       } else if (missiontype == "orbiter") {
-        f = ff + fo;
+        f = (ff + 1)*(fo + 1) - 1;
       } else if (missiontype == "lander") {
-        f = ff + fo + fl;
+        f = (ff + 1)*(fo + 1)*(fl + 1) - 1;
       } else {
-        f = ff + fo + 2*fl;
+        f = 4*(ff + 1)*(fo + 1)*(fl + 1) - 1;
       }
       f = Math.round(f);
       

@@ -1,124 +1,149 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<title>ASTR 121/122 Mission Planning Calculator</title>
-	<meta charset="utf-8">
-	<meta name="author" content="Elijah Goossen">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ASTR 121 Mission Planning</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Elijah Goossen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/components.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-	<h1>ASTR 121/122 Mission Planning Calculator</h1>
-	
-	<label for="target">Select the location of the target:</label>
-	<select id="target" name="target">
-		<option value="outside">Outside Earth's Orbit</option>
-		<option value="inside">Inside Earth's Orbit</option>
-		<option value="moon">Moon</option>
-	</select><br>
 
-	<label for="mission">Select the type of mission:</label>
-	<select id="mission" name="mission">
-		<option value="flyby">Flyby</option>
-		<option value="orbiter">Orbiter</option>
-		<option value="lander">Lander (includes rovers)</option>
-		<option value="return">Sample Return</option>
-	</select><br><br>
-	
-	<table>
-		<tr>
-			<th colspan="2">Target Information</th>
-		</tr>
-		<tr>
-			<td>Semi-Major Axis of Target (AU)</td>
-			<td><input type="number" name="sma" id="sma"></td>
-		</tr>
-		<tr>
-			<td>Mass of Target (M<sub>E</sub>)</td>
-			<td><input type="number" name="mass" id="mass"></td>
-		</tr>
-		<tr>
-			<th colspan="2">Rocket Information</th>
-		</tr>
-		<tr>
-			<td>Parameter A</td>
-			<td><input type="number" name="rocketA" id="rocketA"></td>
-		</tr>
-		<tr>
-			<td>Parameter B</td>
-			<td><input type="number" name="rocketB" id="rocketB"></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type="button" value="Submit" name="submit" onClick="display()"/></td>
-		</tr>
-		<tr><td><br></td></tr>
-		<tr>
-			<td>Maximum Payload (kg)</td>
-			<td><div id="maxpayload" style="text-align:right"></div></td>
-		</tr>
-		<tr>
-			<td>Fuel per kg of Payload (kg)</td>
-			<td><div id="fuel" style="text-align:right"></div></td>
-		</tr>
-		<tr>
-			<td>Cost to Launch (per kg of Payload)</td>
-			<td><div id="cost" style="text-align:right"></div></td>
-		</tr>
+<div class="header">
+  <h1>ASTR 121 Mission Planning Calculator</h1>
+  <p><i>This mission calculator gives basic launch costs for various missions</i></p>
+</div>
+
+<nav-menu></nav-menu>
+
+<p>This page has been replaced. See <a href="propulsion.html">Propulsion System</a></p>
+
+<div class="row">
+  <div class="leftcolumn">  
+    <label for="target">Select the location of the target:</label>
+    <select id="target" name="target">
+      <option value="outside">Inner Planet</option>
+      <option value="inside">Outer Planet</option>
+	  <option value="planetarymoon">Planetary Moon</option>
+      <option value="moon">Earth's Moon</option>
+    </select><br>
+
+    <label for="mission">Select the type of mission:</label>
+    <select id="mission" name="mission">
+      <option value="flyby">Flyby/Impactor</option>
+      <option value="orbiter">Orbiter</option>
+      <option value="lander">Lander/Rover</option>
+      <option value="return">Sample Return</option>
+    </select><br><br>
+  
+    <table>
+      <tr>
+        <th colspan="2">Target Information</th>
+      </tr>
+      <tr>
+        <td>Semi-Major Axis of Target around parent body (AU)</td>
+        <td><input type="number" name="sma" id="sma"></td>
+      </tr>
+	  <tr>
+		<td>Semi-Major Axis of Parent Body around Sun (AU)</td>
+		<td><input type="number" name="sma2" id="sma2"></td>
+	  </tr>
+      <tr>
+        <td>Mass of Target (M<sub>E</sub>)</td>
+        <td><input type="number" name="mass" id="mass"></td>
+      </tr>
 	</table>
-	
-	<br>
-	<br>
-	<a href="marsbound-cards-edited.pdf" target="_blank">Pros and Cons of Components</a>
-	<br>
-	<p>Last updated 15 Nov 2021</p>
-	<p>For questions relating to this page, <a href="mailto: ljhgssn@dordt.edu">email Elijah Goossen.</a></p>
+<!--
+      <tr>
+        <th colspan="2">Rocket Information</th>
+      </tr>
+      <tr>
+        <td>Parameter A</td>
+        <td><input type="number" name="rocketA" id="rocketA"></td>
+      </tr>
+      <tr>
+        <td>Parameter B</td>
+        <td><input type="number" name="rocketB" id="rocketB"></td>
+      </tr>
+-->
+    <table>
+      <tr>
+        <td></td>
+        <td><input type="button" value="Submit" name="submit" onClick="display()"/></td>
+      </tr>
+      <tr><td><br></td></tr>
+      <!-- <tr> -->
+        <!-- <td>Maximum Payload (kg)</td> -->
+        <!-- <td><div id="maxpayload" style="text-align:right"></div></td> -->
+      <!-- </tr> -->
+      <tr>
+        <td>Fuel per kg of Payload (kg)</td>
+        <td><div id="fuel" style="text-align:right"></div></td>
+      </tr>
+      <tr>
+        <td>Cost to Launch (per kg of Payload)</td>
+        <td><div id="cost" style="text-align:right"></div></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
-	<script>
-		function display()
-		{
-			var targetlocation = document.getElementById("target").value;
-			var missiontype = document.getElementById("mission").value;
-			var a = document.getElementById("sma").value;
-			var m = document.getElementById("mass").value;
-			var A = document.getElementById("rocketA").value;
-			var B = document.getElementById("rocketB").value;
-			
-			var maxPL = A*Math.abs(a-1)**B;
-			maxPL = Math.round(maxPL);
-			
-			var ff;
-			if (targetlocation == "inside") {
-				ff = 11*Math.exp(1.6*(1-a))+9.6;
-			} else if (targetlocation == "moon") {
-				ff = 11*Math.exp(1.6*0.00256)+9.6;
-			} else {
-				ff = 22*(a-1)**0.38+9.6;
-			}
-			var fo = 18*m;
-			var fl = 284*m;
-			
-			var f;
-			if (missiontype == "flyby") {
-				f = ff;
-			} else if (missiontype == "orbiter") {
-				f = ff + fo;
-			} else if (missiontype == "lander") {
-				f = ff + fo + fl;
-			} else {
-				f = ff + fo + 2*fl;
-			}
-			f = Math.round(f);
-			
-			var cost = f*2800;
-			cost = Math.round(cost);
-			cost = cost/1000000;
+<my-footer rev-date="29 Apr 2022"></my-footer>
 
-			document.getElementById("maxpayload").innerHTML = maxPL;
-			document.getElementById("fuel").innerHTML = f;
-			document.getElementById("cost").innerHTML = "$ " + cost +  " M";
-		}
-	</script>
+  <script>
+    function display()
+    {
+      var targetlocation = document.getElementById("target").value;
+      var missiontype = document.getElementById("mission").value;
+      var a = document.getElementById("sma").value;
+	  var a2 = document.getElementById("sma2").value;
+      var m = document.getElementById("mass").value;
+    //  var A = document.getElementById("rocketA").value;
+    //  var B = document.getElementById("rocketB").value;
+      
+    //  var maxPL = A*Math.abs(a-1)**B;
+    //  maxPL = Math.round(maxPL);
+       
+	  
+      var ff;
+      if (targetlocation == "inside") {
+        ff = 511.59*Math.exp(-8.586*a);
+	  } else if (targetlocation == "outside") {
+		ff = 3.5499*Math.log(a) + 0.6861;
+	  } else if (targetlocation == "planetarymoon") {
+		ffp = 3.5499*Math.log(a2) + 0.6861;
+		ffm = 1.2542*Math.exp(-36.27*a);
+		ff = (ffp + 1)*(ffm + 1) - 1;
+      } else {
+        ff = 1.72817;
+      }
+	  
+      var fo = 0.8203*m;
+      var fl = 117.61*m;
+      
+      var f;
+      if (missiontype == "flyby") {
+        f = ff;
+      } else if (missiontype == "orbiter") {
+        f = (ff + 1)*(fo + 1) - 1;
+      } else if (missiontype == "lander") {
+        f = (ff + 1)*(fo + 1)*(fl + 1) - 1;
+      } else {
+        f = 4*(ff + 1)*(fo + 1)*(fl + 1) - 1;
+      }
+      f = Math.round(f);
+      
+      var cost = f*2800;
+      cost = Math.round(cost);
+      cost = cost/1000000;
+
+    //  document.getElementById("maxpayload").innerHTML = maxPL;
+      document.getElementById("fuel").innerHTML = f;
+      document.getElementById("cost").innerHTML = "$ " + cost +  " M";
+    }
+  </script>
 </body>
 
 </html>

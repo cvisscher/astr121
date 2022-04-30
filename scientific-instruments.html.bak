@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>ASTR 121 Mission Planning</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Elijah Goossen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/components.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Scientific Instruments</h1>
+</div>
+
+<nav-menu></nav-menu>
+
+<div class="row">
+  <div class="leftcolumn">
+    <p>Scientific Instruments are necessary to answer questions about our Solar System. The cutting-edge technology listed below will equip your spacecraft to answer any questions it encounters.</p>
+	<table>
+		<tr>
+			<th style="width:50%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td>Low-Resolution Camera</td>
+			<td>$20 M</td>
+			<td>10 kg</td>
+			<td>10 W</td>
+		</tr>
+		<tr>
+			<td>Medium-Resolution Camera</td>
+			<td>$50 M</td>
+			<td>20 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>High-Resolution Camera</td>
+			<td>$80 M</td>
+			<td>30 kg</td>
+			<td>40 W</td>
+		</tr>
+		<tr>
+			<td>Infrared Camera</td>
+			<td>$50 M</td>
+			<td>20 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>Infrared Spectrometer</td>
+			<td>$60 M</td>
+			<td>30 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>High-Energy Spectrometer</td>
+			<td>$60 M</td>
+			<td>40 kg</td>
+			<td>50 W</td>
+		</tr>
+		<tr>
+			<td>Radiation Sensor</td>
+			<td>$30 M</td>
+			<td>10 kg</td>
+			<td>30 W</td>
+		</tr>
+		<tr>
+			<td>Life Sciences Laboratory</td>
+			<td>$120 M</td>
+			<td>80 kg</td>
+			<td>250 W</td>
+		</tr>
+		<tr>
+			<td>Laser Topography Mapper</td>
+			<td>$60 M</td>
+			<td>30 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>Color Stereo Camera</td>
+			<td>$40 M</td>
+			<td>30 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>Atmosphere/Wind Sensors</td>
+			<td>$10 M</td>
+			<td>20 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>Magnetometer</td>
+			<td>$10 M</td>
+			<td>20 kg</td>
+			<td>20 W</td>
+		</tr>
+		<tr>
+			<td>Sample Collection Device</td>
+			<td>$10 M</td>
+			<td>30 kg</td>
+			<td>10 W</td>
+		</tr>
+		<tr>
+			<td>Impact Probe</td>
+			<td>$20 M</td>
+			<td>50 kg</td>
+			<td>0 W</td>
+		</tr>
+	</table>
+  </div>
+  
+  <div class="rightcolumn">
+  	<a href="scientific-instruments.html">Scientific Instruments</a><br>
+	<a href="components.html">Other Components</a><br>
+	<a href="power.html">Power Source</a><br>
+	<a href="propulsion.html">Propulsion</a><br>
+	<a href="launch-vehicles.html">Launch Vehicle</a><br>
+  </div>
+</div>
+
+<my-footer rev-date="29 Apr 2022"></my-footer>
+
+</body>
+
+</html>

@@ -6,18 +6,24 @@
   <meta name="author" content="Elijah Goossen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="astr121.css">
-  <script src="components/menu.js" type="text/javascript" defer></script>
-  <script src="components/footer.js" type="text/javascript" defer></script>
+  <script src="components/components.js" type="text/javascript" defer></script>
 </head>
 
 <body>
 
 <div class="header">
-  <h1>ASTR 121 Mission Planning</h1>
+  <h1>About</h1>
 </div>
 
 <nav-menu></nav-menu>
-<my-footer rev-date="29 April 2022"></my-footer>
+
+<div class="row">
+  <div class="leftcolumn">  
+	<p>This project was developed under the Iowa Private Acadamic Libraries Open Education Research Grant.</p>
+  </div>
+</div>
+  
+<my-footer rev-date="29 Apr 2022"></my-footer>
 
 </body>
 
