@@ -29,7 +29,13 @@
 	<a href="power.html">Power Source</a><br>
 	<a href="propulsion.html">Propulsion</a><br>
 	<a href="launch-vehicles.html">Launch Vehicle</a><br>
-
+  </div>
+  
+  <div class="right column">
+	<design-menu></design-menu>
+  </div>
+</div>
+  
 <my-footer rev-date="29 Apr 2022"></my-footer>
 
 </body>
