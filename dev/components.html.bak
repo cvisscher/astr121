@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>ASTR 121 Mission Planning</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Elijah Goossen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/components.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Other Components</h1>
+</div>
+
+<nav-menu></nav-menu>
+
+<div class="row">
+  <div class="leftcolumn">
+    <p>Various systems are needed by your spacecraft to help it accomplish its goals. Select them with care!</p>
+	<p>Items marked with * are required</p>
+	<h2>Computer System</h2>
+	<table>
+		<tr>
+			<th style="width:10%"></th>
+			<th style="width:40%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td colspan="2">*Main Bus</td>
+			<td>$40 M</td>
+			<td>50 kg</td>
+			<td>10 W</td>
+		</tr>
+		<tr>
+			<td colspan="2">*Microprocessor (select 1)</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Standard Microprocessor</td>
+			<td>$10 M</td>
+			<td>10 kg</td>
+			<td>10 W</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Advanced Microprocessor</td>
+			<td>$20 M</td>
+			<td>10 kg</td>
+			<td>20 W</td>
+		</tr>
+	</table>
+	
+	<h2>Communications System</h2>
+	<table>
+		<tr>
+			<th style="width:10%"></th>
+			<th style="width:40%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td colspan="2">*Main Antenna (select 1)</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>High-Gain Antenna</td>
+			<td>$20 M</td>
+			<td>10 kg</td>
+			<td>50 W</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Low-Gain Antenna</td>
+			<td>$10 M</td>
+			<td>10 kg</td>
+			<td>30 W</td>
+		</tr>
+		<tr>
+			<td colspan="2">Backup Antenna (See Above Options)</td>
+		</tr>
+		<tr>
+			<td colspan="2">*Main Memory Card</td>
+			<td>$10 M</td>
+			<td>10 kg</td>
+			<td>30 W</td>
+		</tr>			
+	</table>
+	
+	<h2>Mechanical Systems</h2>
+	<table>
+		<tr>
+			<th style="width:50%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td>Robotic Arm</td>
+			<td>$10 M</td>
+			<td>80 kg</td>
+			<td>10 W</td>
+		</tr>
+		<tr>
+			<td>Rock Drill</td>
+			<td>$10 M</td>
+			<td>30 kg</td>
+			<td>50 W</td>
+		</tr>
+		<tr>
+			<td>Rotating Instrument Mount</td>
+			<td>$10 M</td>
+			<td>30 kg</td>
+			<td>10 W</td>
+		</tr>
+	</table>
+	
+	<h2>Entry, Descent, and Landing (Landers and Rovers only)</h2>
+	<table>
+		<tr>
+			<th style="width:10%"></th>
+			<th style="width:40%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%"></th>
+		</tr>
+		<tr>
+			<td colspan="2">*Heat Shield (atmospheres only)</td>
+			<td>$10 M</td>
+			<td>100 kg</td>
+		</tr>
+		<tr>
+			<td colspan="2">*Hypersonic Parachute (atmospheres only)</td>
+			<td>$10 M</td>
+			<td>80 kg</td>
+		</tr>
+		<tr>
+			<td>*Landing System</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Airbags</td>
+			<td>$80 M</td>
+			<td>150 kg</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Retro Rockets</td>
+			<td>$20 M</td>
+			<td>80 kg</td>
+		</tr>
+	</table>
+	
+	<h2>Mobility System (Rovers Only)</h2>
+	<table>
+		<tr>
+			<th style="width:10%"></th>
+			<th style="width:40%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td colspan="2">*Select 1</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Wheels</td>
+			<td>$30 M</td>
+			<td>100 kg</td>
+			<td>120 W</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Tracks</td>
+			<td>$30 M</td>
+			<td>80 kg</td>
+			<td>100 W</td>
+		</tr>
+	</table>
+  </div>
+  
+  <div class="rightcolumn">
+  	<a href="scientific-instruments.html">Scientific Instruments</a><br>
+	<a href="components.html">Other Components</a><br>
+	<a href="power.html">Power Source</a><br>
+	<a href="propulsion.html">Propulsion</a><br>
+	<a href="launch-vehicles.html">Launch Vehicle</a><br>
+  </div>
+</div>
+
+<my-footer rev-date="29 Apr 2022"></my-footer>
+
+</body>
+
+</html>

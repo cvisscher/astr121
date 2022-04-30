@@ -15,7 +15,9 @@
   <h1>ASTR 121 Part Information</h1>
 </div>
 
-<menu-component></menu-component>
+<nav-menu></nav-menu>
+
+<p>This page has been deprecated.</p>
 
 <div class="row">
   <div class="leftcolumn">

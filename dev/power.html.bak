@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>ASTR 121 Mission Planning</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Elijah Goossen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="astr121.css">
+  <script src="components/components.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Power System</h1>
+</div>
+
+<nav-menu></nav-menu>
+
+<div class="row">
+  <div class="leftcolumn">
+    <p>Your spacecraft requires power to carry out its basic functionality, as well as communicate and do research.</p>
+	<table>
+		<tr>
+			<th style="width:50%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Supplied</th>
+		</tr>
+		<tr>
+			<td>Solar Panels (1 m<sup>2</sup>)</td>
+			<td>$4 M</td>
+			<td>15 kg</td>
+			<td>See Below</td>
+		</tr>
+		<tr>
+			<td>Fuel Cell</td>
+			<td>$80 M</td>
+			<td>250 kg</td>
+			<td>500 W</td>
+		</tr>
+		<tr>
+			<td>Radioisotope Thermoelectric Generator (RTG)</td>
+			<td>$150 M</td>
+			<td>50 kg</td>
+			<td>50 W</td>
+		</tr>
+	</table>
+	
+	<h3>Calculating Solar Power</h3>
+	<p>Solar power may only be used within and including the orbit of Jupiter. Calculate the area in square meters of the solar panels using:<p>
+	<p style="text-align:center"><em>solar panel area (m<sup>2</sup>) = 0.015*a<sup>2</sup>*P<sub>required</sub></em></p>
+	<p>where a is the semi-major axis of the target around the Sun in AU and P<sub>required</sub> is the power required by the spacecraft in Watts.</p>
+	<p>Solar Panels also require the use of a battery to store and supply energy during the night.
+	<table>
+		<tr>
+			<th style="width:50%"></th>
+			<th style="width:17%">Cost</th>
+			<th style="width:16%">Mass</th>
+			<th style="width:16%">Power Required</th>
+		</tr>
+		<tr>
+			<td>Battery</td>
+			<td>$10 M</td>
+			<td>50 kg</td>
+			<td>50 W</td>
+		</tr>
+	</table>
+	
+  </div>
+  
+  <div class="rightcolumn">
+  	<a href="scientific-instruments.html">Scientific Instruments</a><br>
+	<a href="components.html">Other Components</a><br>
+	<a href="power.html">Power Source</a><br>
+	<a href="propulsion.html">Propulsion</a><br>
+	<a href="launch-vehicles.html">Launch Vehicle</a><br>
+  </div>
+</div>
+
+<my-footer rev-date="29 Apr 2022"></my-footer>
+
+</body>
+
+</html>
